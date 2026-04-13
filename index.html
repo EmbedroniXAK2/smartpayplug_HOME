@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartPayPlug | Secure Payment Solutions</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      background: #f9fafc;
+    }
+
+    header {
+      background: white;
+      padding: 15px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    header h1 {
+      color: #0a66c2;
+      font-size: 22px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #0a66c2;
+    }
+
+    .hero {
+      padding: 80px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #0a66c2, #004182);
+      color: white;
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: white;
+      color: #0a66c2;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .btn-primary {
+      background: #ffb400;
+      color: black;
+    }
+
+    .section {
+      padding: 70px 60px;
+      text-align: center;
+    }
+
+    .section h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      color: #0a66c2;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      max-width: 250px;
+      margin: 20px;
+    }
+
+    footer {
+      background: #0a66c2;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+    }
+
+    .cta {
+      background: #ffb400;
+      padding: 60px;
+      text-align: center;
+    }
+
+    .cta h3 {
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>SmartPayPlug</h1>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#how">How It Works</a>
+    <a href="#about">About</a>
+    <a href="https://smartpayplug.web.app" target="_blank">Open App</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h2>Modern Payments. Simplified.</h2>
+    <p>
+      SmartPayPlug is a secure and efficient payment platform designed to
+      streamline transactions for individuals and businesses.
+    </p>
+
+    <a href="https://smartpayplug.web.app" class="btn btn-primary">Get Started</a>
+    <a href="#features" class="btn">Learn More</a>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <h3>Powerful Features</h3>
+
+  <div class="features">
+    <div class="card">
+      <h4>Secure Transactions</h4>
+      <p>Advanced encryption ensures your payments are always protected.</p>
+    </div>
+
+    <div class="card">
+      <h4>Fast Processing</h4>
+      <p>Experience instant payment handling with optimized systems.</p>
+    </div>
+
+    <div class="card">
+      <h4>User-Friendly Interface</h4>
+      <p>Designed for simplicity so anyone can use it effortlessly.</p>
+    </div>
+
+    <div class="card">
+      <h4>Scalable Platform</h4>
+      <p>Perfect for individuals, startups, and growing businesses.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <h3>How It Works</h3>
+
+  <div class="steps">
+    <div class="step">
+      <h4>1. Sign Up</h4>
+      <p>Create your account in seconds.</p>
+    </div>
+
+    <div class="step">
+      <h4>2. Connect</h4>
+      <p>Link your payment methods securely.</p>
+    </div>
+
+    <div class="step">
+      <h4>3. Transact</h4>
+      <p>Send and receive payments instantly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h3>About SmartPayPlug</h3>
+  <p style="max-width:700px;margin:auto;">
+    SmartPayPlug is built to redefine how payments are handled in a digital-first world.
+    Our goal is to deliver secure, fast, and scalable payment infrastructure that
+    adapts to modern needs while maintaining simplicity for users.
+  </p>
+</section>
+
+<section class="cta">
+  <h3>Start Using SmartPayPlug Today</h3>
+  <a href="https://smartpayplug.web.app" class="btn btn-primary">Launch Payment App</a>
+</section>
+
+<footer>
+  <p>© 2026 SmartPayPlug. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
