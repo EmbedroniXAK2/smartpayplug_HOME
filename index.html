@@ -19,6 +19,7 @@ header{
   padding:20px 60px;
   background:#020617;
   border-bottom:1px solid rgba(59,130,246,0.2);
+  flex-wrap:wrap;
 }
 
 header h1{color:#60a5fa}
@@ -42,6 +43,7 @@ nav a{
 
 .hero p{
   font-size:18px;
+  max-width:600px;
 }
 
 .btn{
@@ -76,6 +78,7 @@ nav a{
 video{
   margin-top:20px;
   border-radius:10px;
+  max-width:100%;
 }
 
 /* Language Buttons */
@@ -99,6 +102,36 @@ footer{
   background:#020617;
   border-top:1px solid rgba(59,130,246,0.2);
 }
+
+/* 🔥 MOBILE RESPONSIVE */
+@media(max-width:768px){
+  header{
+    padding:20px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  nav{
+    margin-top:10px;
+  }
+
+  .hero{
+    padding:60px 20px;
+  }
+
+  .hero h2{
+    font-size:28px;
+  }
+
+  .section{
+    padding:40px 20px;
+  }
+
+  .card{
+    width:100%;
+    max-width:300px;
+  }
+}
 </style>
 </head>
 
@@ -108,31 +141,34 @@ footer{
   <h1>⚡ SmartPayPlug</h1>
   <nav>
     <a href="#features">Features</a>
-    <a href="#video">Demo</a>
+    <a href="#video">How to Use</a>
     <a href="/app/" target="_blank">Open App</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Modern Payments. Simplified.</h2>
-  <p>Secure, fast, and scalable payment platform for everyone.</p>
+  <h2>Smarter Digital Transactions, Built for Everyone</h2>
+  <p>
+    SmartPayPlug is more than just payments. It’s a complete digital transaction platform
+    designed for speed, simplicity, and seamless user experience across devices.
+  </p>
   <br>
-  <a href="/app/" target="_blank" class="btn">Launch Payment App</a>
+  <a href="/app/" target="_blank" class="btn">Launch SmartPay</a>
 </section>
 
 <section id="features" class="section">
-  <h2>Features</h2>
+  <h2>Platform Features</h2>
 
   <div class="cards">
-    <div class="card">🔐 Secure Payments</div>
-    <div class="card">⚡ Instant Transactions</div>
-    <div class="card">📱 Easy Interface</div>
-    <div class="card">🌐 Scalable System</div>
+    <div class="card">🔐 Secure & Reliable System</div>
+    <div class="card">⚡ Real-Time Transactions</div>
+    <div class="card">📱 Optimized for All Devices</div>
+    <div class="card">🌐 Scalable Digital Platform</div>
   </div>
 </section>
 
 <section id="video" class="section">
-  <h2>How It Works</h2>
+  <h2>How to Use SmartPayPlug</h2>
 
   <!-- Language Selector -->
   <div style="margin-top:20px;">
@@ -148,9 +184,10 @@ footer{
 </section>
 
 <section class="section">
-  <h2>Start Using SmartPay Today</h2>
+  <h2>Get Started with SmartPayPlug</h2>
+  <p>Access the platform and experience seamless digital transactions instantly.</p>
   <br>
-  <a href="/app/" target="_blank" class="btn">Get Started</a>
+  <a href="/app/" target="_blank" class="btn">Access Platform</a>
 </section>
 
 <footer>
