@@ -38,12 +38,12 @@ nav a{
 
 .hero h2{
   font-size:42px;
-  margin-bottom:20px;
+  margin-bottom:15px;
 }
 
 .hero p{
-  font-size:18px;
-  max-width:600px;
+  font-size:16px;
+  max-width:500px;
 }
 
 .btn{
@@ -68,9 +68,9 @@ nav a{
 
 .card{
   background:#020617;
-  padding:20px;
+  padding:18px;
   border-radius:10px;
-  margin:15px;
+  margin:10px;
   border:1px solid rgba(59,130,246,0.2);
   width:200px;
 }
@@ -103,7 +103,7 @@ footer{
   border-top:1px solid rgba(59,130,246,0.2);
 }
 
-/* 🔥 MOBILE RESPONSIVE */
+/* MOBILE */
 @media(max-width:768px){
   header{
     padding:20px;
@@ -120,16 +120,11 @@ footer{
   }
 
   .hero h2{
-    font-size:28px;
+    font-size:26px;
   }
 
   .section{
     padding:40px 20px;
-  }
-
-  .card{
-    width:100%;
-    max-width:300px;
   }
 }
 </style>
@@ -147,51 +142,43 @@ footer{
 </header>
 
 <section class="hero">
-  <h2>Smarter Digital Transactions, Built for Everyone</h2>
-  <p>
-    SmartPayPlug is more than just payments. It’s a complete digital transaction platform
-    designed for speed, simplicity, and seamless user experience across devices.
-  </p>
+  <h2>Fast. Simple. Smart.</h2>
+  <p>SmartPayPlug makes digital transactions seamless and efficient for everyone.</p>
   <br>
-  <a href="/app/" target="_blank" class="btn">Launch SmartPay</a>
+  <a href="/app/" target="_blank" class="btn">Launch App</a>
 </section>
 
 <section id="features" class="section">
-  <h2>Platform Features</h2>
+  <h2>Key Features</h2>
 
   <div class="cards">
-    <div class="card">🔐 Secure & Reliable System</div>
-    <div class="card">⚡ Real-Time Transactions</div>
-    <div class="card">📱 Optimized for All Devices</div>
-    <div class="card">🌐 Scalable Digital Platform</div>
+    <div class="card">🔐 Secure</div>
+    <div class="card">⚡ Instant</div>
+    <div class="card">📱 Easy</div>
+    <div class="card">🌐 Scalable</div>
   </div>
 </section>
 
 <section id="video" class="section">
-  <h2>How to Use SmartPayPlug</h2>
+  <h2>How to Use</h2>
 
-  <!-- Language Selector -->
   <div style="margin-top:20px;">
     <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">English</button>
     <button onclick="setLanguage('ta')" id="btn-ta" class="lang-btn">தமிழ்</button>
   </div>
 
-  <!-- Video -->
   <video id="tutorialVideo" width="80%" controls>
     <source id="videoSource" src="/video/tutorial-en.mp4" type="video/mp4">
-    Your browser does not support video.
   </video>
 </section>
 
 <section class="section">
-  <h2>Get Started with SmartPayPlug</h2>
-  <p>Access the platform and experience seamless digital transactions instantly.</p>
-  <br>
+  <h2>Get Started</h2>
   <a href="/app/" target="_blank" class="btn">Access Platform</a>
 </section>
 
 <footer>
-  <p>© 2026 SmartPayPlug. All rights reserved.</p>
+  <p>© 2026 SmartPayPlug</p>
 </footer>
 
 <script>
@@ -199,22 +186,18 @@ function setLanguage(lang){
   const video = document.getElementById("tutorialVideo");
   const source = document.getElementById("videoSource");
 
-  if(lang === "en"){
-    source.src = "/video/tutorial-en.mp4";
-  } else {
-    source.src = "/video/tutorial-ta.mp4";
-  }
+  source.src = lang === "ta"
+    ? "/video/tutorial-ta.mp4"
+    : "/video/tutorial-en.mp4";
 
   video.load();
   video.play();
 
   document.getElementById("btn-en").classList.remove("active");
   document.getElementById("btn-ta").classList.remove("active");
-
   document.getElementById("btn-" + lang).classList.add("active");
 }
 
-/* Auto-detect Tamil users */
 const userLang = navigator.language || navigator.userLanguage;
 if(userLang && userLang.toLowerCase().includes("ta")){
   setLanguage("ta");
