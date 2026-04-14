@@ -3,137 +3,228 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SmartPayPlug</title>
-
+<title>SmartPayPlug — Intelligent Charging</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{
-  margin:0;
-  font-family:Segoe UI;
-  background:#020617;
-  color:#e2e8f0;
+:root{
+  --bg:#020617;
+  --bg2:#0f172a;
+  --accent:#2563eb;
+  --green:#22c55e;
+  --text:#e2e8f0;
+  --muted:#64748b;
+  --border:rgba(255,255,255,0.08);
+  --radius:16px;
 }
 
-header{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 60px;
-  background:#020617;
-  border-bottom:1px solid rgba(59,130,246,0.2);
-  flex-wrap:wrap;
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
 }
 
-header h1{color:#60a5fa}
-
-nav a{
-  margin-left:20px;
-  color:white;
-  text-decoration:none;
-  font-weight:500;
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(2,6,23,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.hero{
-  padding:100px 60px;
-  background:linear-gradient(135deg,#2563eb,#22c55e);
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
 }
 
-.hero h2{
-  font-size:42px;
-  margin-bottom:15px;
+.logo span {
+  background: linear-gradient(135deg, #2563eb, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.hero p{
-  font-size:16px;
-  max-width:500px;
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 32px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.btn{
-  padding:12px 25px;
-  background:#ffb400;
-  color:black;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
+nav a:hover {
+  color: #60a5fa;
 }
 
-.section{
-  padding:60px;
-  text-align:center;
+/* Hero */
+.hero {
+  padding: 140px 60px 100px;
+  background: linear-gradient(135deg, rgba(37,99,235,0.9), rgba(34,197,94,0.85));
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.cards{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.08%22/%3E%3C/svg%3E');
+  pointer-events: none;
 }
 
-.card{
-  background:#020617;
-  padding:18px;
-  border-radius:10px;
-  margin:10px;
-  border:1px solid rgba(59,130,246,0.2);
-  width:200px;
+.hero h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-video{
-  margin-top:20px;
-  border-radius:10px;
-  max-width:100%;
+.hero p {
+  font-size: 18px;
+  max-width: 520px;
+  margin: 0 auto 40px;
+  opacity: 0.95;
 }
 
-/* Language Buttons */
-.lang-btn{
-  padding:10px 20px;
-  margin:5px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  background:#1e293b;
-  color:white;
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: white;
+  color: #020617;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.lang-btn.active{
-  background:linear-gradient(135deg,#2563eb,#22c55e);
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(37,99,235,0.4);
 }
 
-footer{
-  padding:20px;
-  text-align:center;
-  background:#020617;
-  border-top:1px solid rgba(59,130,246,0.2);
+/* Sections */
+.section {
+  padding: 100px 60px;
+  text-align: center;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  header{
-    padding:20px;
-    flex-direction:column;
-    align-items:flex-start;
-  }
+.section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
 
-  nav{
-    margin-top:10px;
-  }
+.section p {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  color: var(--muted);
+  font-size: 17px;
+}
 
-  .hero{
-    padding:60px 20px;
-  }
+/* Features Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 40px;
+}
 
-  .hero h2{
-    font-size:26px;
-  }
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  width: 220px;
+  transition: all 0.3s;
+}
 
-  .section{
-    padding:40px 20px;
-  }
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(37,99,235,0.4);
+  box-shadow: 0 20px 40px rgba(37,99,235,0.1);
+}
+
+.card div {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+/* Video Section */
+.video-section {
+  background: #0f172a;
+  padding: 100px 60px;
+}
+
+.lang-buttons {
+  margin-bottom: 30px;
+}
+
+.lang-btn {
+  padding: 10px 24px;
+  margin: 0 8px;
+  border: none;
+  border-radius: 8px;
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, #2563eb, #22c55e);
+  color: white;
+}
+
+video {
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  max-width: 100%;
+  width: 860px;
+}
+
+/* Footer */
+footer {
+  background: #020617;
+  border-top: 1px solid var(--border);
+  padding: 40px 60px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  header { padding: 18px 20px; }
+  nav a { margin: 10px 15px 0 0; }
+  .hero { padding: 100px 20px; }
+  .hero h2 { font-size: 36px; }
+  .section { padding: 70px 20px; }
+  .cards { gap: 16px; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>⚡ SmartPayPlug</h1>
+  <div class="logo">⚡ Smart<span>Pay</span>Plug</div>
   <nav>
     <a href="#about">About</a>
     <a href="#features">Features</a>
@@ -142,61 +233,59 @@ footer{
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h2>Fast. Simple. Smart.</h2>
+  <h2>Fast. Simple.<br>Smart.</h2>
   <p>SmartPayPlug makes digital transactions seamless and efficient for everyone.</p>
-  <br>
-  <a href="/app/" target="_blank" class="btn">Launch App</a>
+  <a href="/app/" target="_blank" class="btn">Launch App →</a>
 </section>
 
-<!-- ✅ ABOUT SECTION -->
+<!-- ABOUT -->
 <section id="about" class="section">
   <h2>About SmartPayPlug</h2>
-  <p style="max-width:700px;margin:auto;margin-top:10px;line-height:1.7;">
-    SmartPayPlug is a modern digital transaction platform designed to simplify everyday payments.
-    It provides a seamless and secure environment for users to access and complete transactions efficiently.
-    With an intuitive interface, users can quickly log in, navigate the dashboard, and choose their preferred payment method.
-    The platform supports both QR-based payments and direct payment options for maximum flexibility.
+  <p>
+    SmartPayPlug is a modern digital transaction platform designed to simplify everyday payments. 
+    It provides a seamless and secure environment for users to access and complete transactions efficiently. 
+    With an intuitive interface, users can quickly log in, navigate the dashboard, and choose their preferred payment method. 
+    The platform supports both QR-based payments and direct payment options for maximum flexibility. 
     SmartPayPlug ensures fast processing while maintaining a smooth and user-friendly experience across devices.
-    Its streamlined design reduces complexity, allowing users to complete transactions in just a few steps.
-    Built with reliability in mind, it adapts to different user needs without compromising performance.
-    Whether for quick payments or regular usage, SmartPayPlug delivers consistency and ease.
-    The platform is optimized for accessibility, making it suitable for all users.
-    Overall, SmartPayPlug redefines digital transactions with simplicity and efficiency.
   </p>
 </section>
 
+<!-- FEATURES -->
 <section id="features" class="section">
   <h2>Key Features</h2>
-
   <div class="cards">
-    <div class="card">🔐 Secure</div>
-    <div class="card">⚡ Instant</div>
-    <div class="card">📱 Easy</div>
-    <div class="card">🌐 Scalable</div>
+    <div class="card"><div>🔐</div><strong>Secure</strong></div>
+    <div class="card"><div>⚡</div><strong>Instant</strong></div>
+    <div class="card"><div>📱</div><strong>Easy</strong></div>
+    <div class="card"><div>🌐</div><strong>Scalable</strong></div>
   </div>
 </section>
 
-<section id="video" class="section">
+<!-- HOW TO USE -->
+<section id="video" class="video-section">
   <h2>How to Use</h2>
-
-  <div style="margin-top:20px;">
+  
+  <div class="lang-buttons">
     <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">English</button>
     <button onclick="setLanguage('ta')" id="btn-ta" class="lang-btn">தமிழ்</button>
   </div>
 
-  <video id="tutorialVideo" width="80%" controls>
+  <video id="tutorialVideo" controls>
     <source id="videoSource" src="/video/tutorial-en.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
 </section>
 
+<!-- GET STARTED -->
 <section class="section">
-  <h2>Get Started</h2>
-  <a href="/app/" target="_blank" class="btn">Access Platform</a>
+  <h2>Get Started Today</h2>
+  <a href="/app/" target="_blank" class="btn">Access Platform →</a>
 </section>
 
 <footer>
-  <p>© 2026 SmartPayPlug</p>
+  <p>© 2026 SmartPayPlug • Intelligent Charging Solutions</p>
 </footer>
 
 <script>
@@ -204,18 +293,19 @@ function setLanguage(lang){
   const video = document.getElementById("tutorialVideo");
   const source = document.getElementById("videoSource");
 
-  source.src = lang === "ta"
-    ? "/video/tutorial-ta.mp4"
+  source.src = lang === "ta" 
+    ? "/video/tutorial-ta.mp4" 
     : "/video/tutorial-en.mp4";
 
   video.load();
-  video.play();
+  video.play().catch(() => {});
 
   document.getElementById("btn-en").classList.remove("active");
   document.getElementById("btn-ta").classList.remove("active");
   document.getElementById("btn-" + lang).classList.add("active");
 }
 
+// Auto detect Tamil
 const userLang = navigator.language || navigator.userLanguage;
 if(userLang && userLang.toLowerCase().includes("ta")){
   setLanguage("ta");
