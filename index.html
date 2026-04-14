@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SmartPayPlug — Intelligent Charging</title>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#020617;
@@ -17,298 +19,204 @@
   --radius:16px;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
+/* LIGHT MODE */
+.light-theme {
+  --bg:#f8fafc;
+  --bg2:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:rgba(0,0,0,0.1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
   font-family:'DM Sans',sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.6;
-  overflow-x:hidden;
 }
 
-/* Header */
-header {
-  position: sticky;
-  top: 0;
-  background: rgba(2,6,23,0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  z-index: 100;
-  padding: 18px 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  width:100%;
+  padding:0 20px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: white;
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:rgba(2,6,23,0.95);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.logo span {
-  background: linear-gradient(135deg, #2563eb, #22c55e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.logo{
+  display:flex;
+  gap:10px;
+  font-family:'Space Grotesk';
+  font-size:24px;
+  font-weight:700;
 }
 
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  margin-left: 32px;
-  font-weight: 500;
-  transition: color 0.3s;
+.logo span{
+  background:linear-gradient(135deg,#2563eb,#22c55e);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-nav a:hover {
-  color: #60a5fa;
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--text);
 }
 
-/* Hero */
-.hero {
-  padding: 140px 60px 100px;
-  background: linear-gradient(135deg, rgba(37,99,235,0.9), rgba(34,197,94,0.85));
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+/* HERO */
+.hero{
+  padding:120px 20px 80px;
+  text-align:center;
+  background:linear-gradient(135deg,#2563eb,#22c55e);
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.08%22/%3E%3C/svg%3E');
-  pointer-events: none;
+.hero h2{
+  font-size:48px;
+  font-family:'Space Grotesk';
 }
 
-.hero h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 20px;
+.hero p{
+  max-width:500px;
+  margin:20px auto;
 }
 
-.hero p {
-  font-size: 18px;
-  max-width: 520px;
-  margin: 0 auto 40px;
-  opacity: 0.95;
+.btn{
+  padding:14px 30px;
+  background:white;
+  color:#000;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 32px;
-  background: white;
-  color: #020617;
-  font-weight: 600;
-  font-size: 16px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+/* SECTION */
+.section{
+  padding:80px 20px;
+  text-align:center;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(37,99,235,0.4);
+/* FEATURES GRID */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  max-width:500px;
+  margin:40px auto;
+  gap:20px;
 }
 
-/* Sections */
-.section {
-  padding: 100px 60px;
-  text-align: center;
+.card{
+  background:var(--bg2);
+  padding:30px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
 }
 
-.section h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 36px;
-  margin-bottom: 20px;
+.card div{
+  font-size:40px;
 }
 
-.section p {
-  max-width: 720px;
-  margin: 0 auto 40px;
-  color: var(--muted);
-  font-size: 17px;
+/* VIDEO */
+.video-section{
+  text-align:center;
+  padding:80px 20px;
 }
 
-/* Features Cards */
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 40px;
+video{
+  width:100%;
+  max-width:800px;
+  display:block;
+  margin:auto;
+  border-radius:14px;
 }
 
-.card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 24px;
-  width: 220px;
-  transition: all 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(37,99,235,0.4);
-  box-shadow: 0 20px 40px rgba(37,99,235,0.1);
-}
-
-.card div {
-  font-size: 42px;
-  margin-bottom: 16px;
-}
-
-/* Video Section */
-.video-section {
-  background: #0f172a;
-  padding: 100px 60px;
-}
-
-.lang-buttons {
-  margin-bottom: 30px;
-}
-
-.lang-btn {
-  padding: 10px 24px;
-  margin: 0 8px;
-  border: none;
-  border-radius: 8px;
-  background: #1e293b;
-  color: white;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s;
-}
-
-.lang-btn.active {
-  background: linear-gradient(135deg, #2563eb, #22c55e);
-  color: white;
-}
-
-video {
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  max-width: 100%;
-  width: 860px;
-}
-
-/* Footer */
-footer {
-  background: #020617;
-  border-top: 1px solid var(--border);
-  padding: 40px 60px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-/* Responsive */
-@media(max-width: 768px) {
-  header { padding: 18px 20px; }
-  nav a { margin: 10px 15px 0 0; }
-  .hero { padding: 100px 20px; }
-  .hero h2 { font-size: 36px; }
-  .section { padding: 70px 20px; }
-  .cards { gap: 16px; }
+/* FOOTER */
+footer{
+  padding:40px;
+  text-align:center;
+  color:var(--muted);
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="logo">⚡ Smart<span>Pay</span>Plug</div>
+
   <nav>
     <a href="#about">About</a>
     <a href="#features">Features</a>
-    <a href="#video">How to Use</a>
-    <a href="/app/" target="_blank">Open App</a>
+    <a href="#video">How</a>
+    <a href="/app/">App</a>
   </nav>
+
+  <button onclick="toggleTheme()">🌙/☀️</button>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <h2>Fast. Simple.<br>Smart.</h2>
-  <p>SmartPayPlug makes digital transactions seamless and efficient for everyone.</p>
-  <a href="/app/" target="_blank" class="btn">Launch App →</a>
+  <h2>Fast. Simple. Smart.</h2>
+  <p>SmartPayPlug makes digital transactions seamless and efficient.</p>
+  <a href="/app/" class="btn">Launch App</a>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
-  <h2>About SmartPayPlug</h2>
-  <p>
-    SmartPayPlug is a modern digital transaction platform designed to simplify everyday payments. 
-    It provides a seamless and secure environment for users to access and complete transactions efficiently. 
-    With an intuitive interface, users can quickly log in, navigate the dashboard, and choose their preferred payment method. 
-    The platform supports both QR-based payments and direct payment options for maximum flexibility. 
-    SmartPayPlug ensures fast processing while maintaining a smooth and user-friendly experience across devices.
-  </p>
+  <div class="container">
+    <h2>About</h2>
+    <p>SmartPayPlug is a modern digital payment platform for seamless transactions.</p>
+  </div>
 </section>
 
 <!-- FEATURES -->
 <section id="features" class="section">
-  <h2>Key Features</h2>
-  <div class="cards">
-    <div class="card"><div>🔐</div><strong>Secure</strong></div>
-    <div class="card"><div>⚡</div><strong>Instant</strong></div>
-    <div class="card"><div>📱</div><strong>Easy</strong></div>
-    <div class="card"><div>🌐</div><strong>Scalable</strong></div>
+  <div class="container">
+    <h2>Key Features</h2>
+
+    <div class="cards">
+      <div class="card"><div>🔐</div>Secure</div>
+      <div class="card"><div>⚡</div>Instant</div>
+      <div class="card"><div>📱</div>Easy</div>
+      <div class="card"><div>🌐</div>Scalable</div>
+    </div>
+
   </div>
 </section>
 
-<!-- HOW TO USE -->
+<!-- VIDEO -->
 <section id="video" class="video-section">
-  <h2>How to Use</h2>
-  
-  <div class="lang-buttons">
-    <button onclick="setLanguage('en')" id="btn-en" class="lang-btn active">English</button>
-    <button onclick="setLanguage('ta')" id="btn-ta" class="lang-btn">தமிழ்</button>
+  <div class="container">
+    <h2>How to Use</h2>
+
+    <video controls>
+      <source src="/video/tutorial-en.mp4" type="video/mp4">
+    </video>
+
   </div>
-
-  <video id="tutorialVideo" controls>
-    <source id="videoSource" src="/video/tutorial-en.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
-
-<!-- GET STARTED -->
-<section class="section">
-  <h2>Get Started Today</h2>
-  <a href="/app/" target="_blank" class="btn">Access Platform →</a>
 </section>
 
 <footer>
-  <p>© 2026 SmartPayPlug • Intelligent Charging Solutions</p>
+  © 2026 SmartPayPlug
 </footer>
 
 <script>
-function setLanguage(lang){
-  const video = document.getElementById("tutorialVideo");
-  const source = document.getElementById("videoSource");
-
-  source.src = lang === "ta" 
-    ? "/video/tutorial-ta.mp4" 
-    : "/video/tutorial-en.mp4";
-
-  video.load();
-  video.play().catch(() => {});
-
-  document.getElementById("btn-en").classList.remove("active");
-  document.getElementById("btn-ta").classList.remove("active");
-  document.getElementById("btn-" + lang).classList.add("active");
-}
-
-// Auto detect Tamil
-const userLang = navigator.language || navigator.userLanguage;
-if(userLang && userLang.toLowerCase().includes("ta")){
-  setLanguage("ta");
+function toggleTheme(){
+  document.body.classList.toggle("light-theme");
 }
 </script>
 
